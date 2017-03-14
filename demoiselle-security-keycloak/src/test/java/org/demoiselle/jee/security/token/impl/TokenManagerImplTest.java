@@ -7,6 +7,7 @@
 package org.demoiselle.jee.security.token.impl;
 
 import static java.lang.System.out;
+import java.util.logging.Logger;
 import javax.inject.Inject;
 import org.apache.deltaspike.testcontrol.api.junit.CdiTestRunner;
 import org.demoiselle.jee.core.api.security.DemoiselleUser;
@@ -14,35 +15,20 @@ import org.demoiselle.jee.core.api.security.Token;
 import org.demoiselle.jee.core.api.security.TokenManager;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 
 /**
  *
- * @author COMUNIDADE
+ * @author gladson
  */
 @RunWith(CdiTestRunner.class)
 public class TokenManagerImplTest {
-
-    @Inject
-    private DemoiselleUser dml;
-
-    @Inject
-    private Token token;
-
     private static String localtoken;
-
-    @Inject
-    private TokenManager instance;
-
-    /**
-     *
-     */
-    public TokenManagerImplTest() {
-    }
+    private static final Logger LOG = Logger.getLogger(TokenManagerImplTest.class.getName());
 
     /**
      *
@@ -57,6 +43,23 @@ public class TokenManagerImplTest {
     @AfterClass
     public static void tearDownClass() {
     }
+
+    @Inject
+    private DemoiselleUser dml;
+
+    @Inject
+    private Token token;
+
+
+    @Inject
+    private TokenManager instance;
+
+    /**
+     *
+     */
+    public TokenManagerImplTest() {
+    }
+
 
     /**
      *

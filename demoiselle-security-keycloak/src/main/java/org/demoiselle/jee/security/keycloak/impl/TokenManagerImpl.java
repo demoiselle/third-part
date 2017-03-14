@@ -4,8 +4,9 @@
  * License: GNU Lesser General Public License (LGPL), version 3 or later.
  * See the lgpl.txt file in the root directory or <https://www.gnu.org/licenses/lgpl.html>.
  */
-package org.demoiselle.jee.security.token.impl;
+package org.demoiselle.jee.security.keycloak.impl;
 
+import java.util.logging.Logger;
 import javax.annotation.Priority;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -22,6 +23,7 @@ import org.demoiselle.jee.core.api.security.TokenType;
 @RequestScoped
 @Priority(AUTHENTICATION)
 public class TokenManagerImpl implements TokenManager {
+    private static final Logger LOG = Logger.getLogger(TokenManagerImpl.class.getName());
 
     @Inject
     private Token token;
